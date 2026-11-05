@@ -651,11 +651,10 @@ function statsBlock(leads, periodLabel) {
 }
 
 // ========== HEALTH ==========
-app.get(['/crm', '*/crm'], (req, res) => {
+app.get(['/crm', '/crm/*'], (req, res) => {
   res.sendFile(path.join(__dirname, 'crm.html'));
 });
-
-app.get(['/app', '*/app', '/'], (req, res) => {
+app.get(['/app', '/app/*', '/'], (req, res) => {
   res.sendFile(path.join(__dirname, 'app.html'));
 });
 app.get('/', (req, res) => {
